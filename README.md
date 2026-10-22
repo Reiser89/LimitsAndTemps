@@ -4,6 +4,8 @@ A tiny tray app for Windows that shows your **AI agent usage limits** (Claude Co
 
 It is a single `LimitsAndTemps.exe`: no installer, no DLLs, no runtime to install. It uses about 7 MB of RAM and practically no CPU, and it does nothing while it sits in the tray.
 
+![LimitsAndTemps main window](docs/screenshot.png)
+
 > ## ⚠️ Experimental – use at your own risk
 >
 > This app is **experimental** and is **not affiliated with or endorsed by Anthropic, OpenAI or any other provider**.

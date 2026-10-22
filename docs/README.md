@@ -26,7 +26,7 @@ src\                   C++/wx app
   version.h            app version (single source for the version resource, tray menu and --dump)
   app.rc               icon, manifest, version resource, embedded PawnIO installer and modules
 third_party\           PawnIO_setup.exe and PawnIO.Modules\ (official, signed, hash-pinned; fetched by build.bat)
-docs\                  these docs
+docs\                  these docs, plus screenshot.png (the README image; made with demo data, not a real PC)
 build\                 build output (git-ignored)
 ```
 
