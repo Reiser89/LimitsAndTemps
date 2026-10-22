@@ -1,0 +1,39 @@
+// "appicon" sorts before wx's own icons, so Explorer uses it as the exe icon.
+appicon ICON "wx/msw/computer.ico"
+
+// Official signed PawnIO installer and modules (third_party\, fetched by build.bat), used by the
+// elevated helper mode: helper.cpp installs the driver, cputemp.cpp loads the modules.
+PAWNIOSETUP        RCDATA "third_party\\PawnIO_setup.exe"
+PAWNIO_INTELMSR    RCDATA "third_party\\PawnIO.Modules\\IntelMSR.bin"
+PAWNIO_AMDFAMILY10 RCDATA "third_party\\PawnIO.Modules\\AMDFamily10.bin"
+PAWNIO_AMDFAMILY17 RCDATA "third_party\\PawnIO.Modules\\AMDFamily17.bin"
+
+#include "version.h"
+
+1 VERSIONINFO
+ FILEVERSION APP_VERSION_MAJOR, APP_VERSION_MINOR, APP_VERSION_PATCH, 0
+ PRODUCTVERSION APP_VERSION_MAJOR, APP_VERSION_MINOR, APP_VERSION_PATCH, 0
+ FILEOS 0x4L
+ FILETYPE 0x1L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "LimitsAndTemps"
+            VALUE "FileVersion", APP_VERSION_STR
+            VALUE "InternalName", "LimitsAndTemps"
+            VALUE "OriginalFilename", "LimitsAndTemps.exe"
+            VALUE "ProductName", "LimitsAndTemps"
+            VALUE "ProductVersion", APP_VERSION_STR
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#define wxUSE_RC_MANIFEST 1
+#define wxUSE_DPI_AWARE_MANIFEST 2
+#include "wx/msw/wx.rc"
